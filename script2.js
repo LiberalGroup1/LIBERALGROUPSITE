@@ -53,3 +53,44 @@ prev.onclick = function(){
     active = active - 1 >= 0 ? active -1 : active;
     loadShow();
 }
+// Функция для загрузки HTML и CSS в текстовые поля
+function loadCode() {
+    fetch('/get-code')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('html-code').value = data.html;
+        document.getElementById('css-code').value = data.css;
+      })
+      .catch(err => console.error('Ошибка при загрузке кода:', err));
+  }
+  
+  // Функция для сохранения изменений
+  function saveChanges() {
+    const htmlCode = document.getElementById('html-code').value;
+    const cssCode = document.getElementById('css-code').value;
+  
+    fetch('/save-code', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ html: htmlCode, css: cssCode })
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Код успешно сохранён и обновлён на сервере!');
+        commitAndPushChanges(); // Коммитим и пушим изменения
+      })
+      .catch(err => console.error('Ошибка при сохранении изменений:', err));
+  }
+  
+  // Функция для коммита и пуша изменений в репозиторий
+  function commitAndPushChanges() {
+    fetch('/commit-push', { method: 'POST' })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Изменения успешно отправлены в репозиторий');
+      })
+      .catch(err => console.error('Ошибка при пуше в репозиторий:', err));
+  }
+  
+  // Загрузка кода при старте
+  window.onload = loadCode;
