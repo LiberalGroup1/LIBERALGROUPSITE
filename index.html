@@ -1,99 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIBERAL GROUP</title>
-    <link rel="icon" href="styles/img/LG_ico.png">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <nav class="nav">
-        <ul class="nav__list">
-            <li><a href="#constitution" class="nav-link" data-color="0x0000ff" data-background="0x333333" data-pseudo-bg-color="0x0000ff" data-target="modal-constitution">Конституция</a></li>
-            <li><a href="#reputation" class="nav-link" data-color="0xffb1" data-background="0x1000" data-pseudo-bg-color="0xffb1" data-target="modal-reputation">Репутации</a></li>
-            <li><a href="#activity" class="nav-link" data-color="0x00ff00" data-background="0x222222" data-pseudo-bg-color="0x00ff00" data-target="modal-activity">Активность</a></li>
-            <li><a href="#home" class="nav-link" data-color="0xff0000" data-background="0xe0303" data-pseudo-bg-color="0xff0000">Главная</a></li>
-            <li><a href="#games" class="nav-link" data-color="0xffff00" data-background="0x444444" data-pseudo-bg-color="0xffff00" data-target="modal-games">Игры</a></li>
-            <li><a href="#parties" class="nav-link" data-color="0xff00ff" data-background="0x6040e" data-pseudo-bg-color="0xff00ff" data-target="modal-parties">Партии</a></li>
-            <li><a href="#developers" class="nav-link" data-color="0x3f8fff" data-background="0x41a1f" data-pseudo-bg-color="0x3f8fff" data-target="modal-developers">Разработчики</a></li>
-        </ul>
-    </nav>
-    <div class="modal" id="modal-constitution">
-        <div class="modal-content">
-            <h2 class="modal-content__title">Конституция</h2>
-            <p>Текст о конституции...</p>
-        </div>
-    </div>
-    
-    <div class="modal" id="modal-reputation">
-        <div class="modal-content">
-            <h2 class="modal-content__title">Репутации</h2>
-            <p>Текст о репутациях...</p>
-        </div>
-    </div>
-    
-    <div class="modal" id="modal-activity">
-        <div class="modal-content">
-            <h2 class="modal-content__title">Активность</h2>
-            <p>Текст об активности...</p>
-        </div>
-    </div>
-    
-    <div class="modal" id="modal-home">
-        <div class="modal-content">
-            <h2 class="modal-content__title">Главная</h2>
-            <p>Текст о главной...</p>
-        </div>
-    </div>
-    
-    <div class="modal" id="modal-games">
-        <div class="modal-content">
-            <h2 class="modal-content__title">Во что играем</h2>
-            <div class="games">
-              <div class="game">
-                
-              </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="modal" id="modal-parties"> 
-        <button id="back" class="hidden-back"><</button> 
-        <div class="modal-content" id="modal-content"> 
-          <h2 class="modal-content__title">Партии</h2> 
-          <div class="parties"> 
-            <div class="slider"> 
-              <div class="item" data-id="republicans"> 
-                <img src="styles/img/R.symbol.png" alt="" class="item__logo"> 
-                <h1>Республиканцы</h1> 
-                <div class="item__players"> 
-                    <img src="styles/img/icons8-пользователь-96.png" alt=""> 
-                  <p>1</p> 
-                </div> 
-              </div> 
-              <div class="item" data-id="lr"> 
-                <img src="styles/img/LR.png" alt="" class="item__logo"> 
-                <h1>Либеральный Рассвет</h1> 
-                <div class="item__players"> 
-                  <img src="styles/img/icons8-пользователь-96.png" alt=""> 
-                  <p>3</p> 
-                </div> 
-              </div> 
-              <div class="item" data-id="ne"> 
-                <img src="styles/img/Ne.png" alt="" class="item__logo"> 
-                <h1>Новая Эра</h1> 
-                <div class="item__players"> 
-                  <img src="styles/img/icons8-пользователь-96.png" alt=""> 
-                  <p>1</p> 
-                </div> 
-              </div> 
-              <button id="next">></button> 
-              <button id="prev"><</button> 
-            </div> 
-          </div> 
-        </div> 
-        <div class="item-details hidden-details" id="republicans-details"> 
+ id="republicans-details"> 
             <p><span class="italic__font">Дата регистрации: 11.09.2024 </span>
                 <br>
                 <span class="bold__font">Название партии</span>: Республиканцы
@@ -201,9 +106,35 @@
     </div>
 
     <header id="header" class="header">
-        <div class="header__content">
-            <h1 id="typewriter-text"></h1>
-        </div>
+      <div class="header__content">
+        <h1 id="typewriter-text"></h1>
+      </div>
+<script>
+  async function saveChanges() {
+    const html = document.getElementById('htmlEditor').value;
+    const css = document.getElementById('cssEditor').value;
+
+    const res = await fetch('/api/save', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ html, css })
+    });
+
+    if (res.ok) {
+      alert("Изменения сохранены и отправлены в GitHub!");
+    } else {
+      alert("Ошибка при сохранении");
+    }
+  }
+
+  // Загрузка начального кода
+  fetch('/api/load')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('htmlEditor').value = data.html;
+      document.getElementById('cssEditor').value = data.css;
+    });
+</script>
     </header>
     
     <main>
@@ -227,6 +158,7 @@
     <script src="script2.js"></script>
     <script src="app.js"></script>
     <script src="bg-40.js"></script>
+    <script src="server.js"></script>
     <script>
 const modalItems = document.querySelectorAll('.item');
 const modalContent = document.querySelector('#modal-content');
@@ -277,6 +209,20 @@ backButton.addEventListener('click', () => {
   }, 500);
 });
 
+    </script>
+    <script>
+      document.getElementById('updateButton').addEventListener('click', function() {
+        fetch('/update-repo', {
+          method: 'POST',
+        })
+        .then(response => response.json())
+        .then(data => {
+          alert(data.message);
+        })
+        .catch(error => {
+          alert('Ошибка: ' + error.message);
+        });
+      });
     </script>
 </body>
 </html>
