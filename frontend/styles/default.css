@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Jura:wght@300..700&family=Orbitron:wght@400..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px; /* Adjust base font size for better scaling */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #121212;
+    overflow-x: hidden;
+    padding-top: 100vh; /* Adjust header for mobile */
+}
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2f2f2f;
+    border-radius: 4px;
+    width: 0px;
+}
