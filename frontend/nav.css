@@ -1,0 +1,104 @@
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    transition: 0.5s;
+    height: (max-content + 3px);
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    user-select: none;
+}
+
+.nav__list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background-color: var(--pseudo-bg-color, rgba(119, 0, 0, 0.8));
+    transition: 1s ease;
+    z-index: -1;
+    clip-path: polygon(50px 0, 100% 0, 100% calc(100% - 50px), calc(100% - 50px) 100%, 0 100%, 0 50px);
+    opacity: 0.5;
+}
+
+.nav__list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.5s, text-indent 0.5s ease-out;
+    font-family: "Jura", serif;
+    position: relative;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    overflow: hidden;
+    outline: none;
+}
+
+.nav__list a::before {
+    content: "›";
+    position: absolute;
+    left: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.nav__list a:hover {
+    text-indent: 20px;
+}
+
+.nav__list a:hover::before {
+    opacity: 1;
+}
+
+.nav__list a:hover::after {
+    width: 220px;
+}
+
+.nav__list a:focus::after {
+    width: 220px;
+    pointer-events: none;
+}
+
+.nav.animate-nav {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav.hide {
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    transition: transform 0.5s ease;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0;
+}
+
+.nav__list li {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}

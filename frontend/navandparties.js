@@ -1,3 +1,4 @@
+
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function(event) {
         event.preventDefault(); // Останавливаем переход по ссылке
