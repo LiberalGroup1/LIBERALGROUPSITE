@@ -7,7 +7,7 @@
   ],
   "routes": [
     {
-      "src": "/frontend/(.*)",
+      "src": "/(.*)",
       "dest": "/frontend/$1"
     }
   ]
