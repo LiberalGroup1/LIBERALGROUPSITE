@@ -6,6 +6,7 @@
     <title>LIBERAL GROUP</title>
     <link rel="icon" href="styles/img/LG_ico.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
 </head>
 <body>
     <nav class="nav">
@@ -49,7 +50,7 @@
     
     <div class="modal" id="modal-games">
         <div class="modal-content">
-            <h2 class="modal-content__title">Во что играем</h2>
+            <h2 class="modal-content__title">Игры</h2>
             <div class="games">
               <div class="game">
 
@@ -196,6 +197,25 @@
                     <p class="developer__do">Код, дизайн</p>
                     <p class="developer__nick">fazennukkk |  Никита</p>
                 </div>
+                <div class="dev-container">
+                  <h1>Добро пожаловать!</h1>
+                  <button id="loginBtn" class="dev-button">Войти как разработчик</button>
+              
+                  <div id="loginForm" class="dev-hidden">
+                    <input type="password" id="passwordInput" class="dev-password-input" placeholder="Введите пароль" />
+                    <button id="submitPassword" class="dev-button">Войти</button>
+                  </div>
+              
+                  <div id="editorContainer" class="dev-hidden">
+                    <textarea id="codeEditor"></textarea>
+                    <button id="saveBtn" class="dev-button">Сохранить изменения в репозиторий</button>
+                    <div id="status" class="dev-status"></div>
+                  </div>
+                </div>
+              
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
+                <script src="script.js"></script>
             </div>
         </div>
     </div>
@@ -204,32 +224,6 @@
       <div class="header__content">
         <h1 id="typewriter-text"></h1>
       </div>
-<script>
-  async function saveChanges() {
-    const html = document.getElementById('htmlEditor').value;
-    const css = document.getElementById('cssEditor').value;
-
-    const res = await fetch('/api/save', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ html, css })
-    });
-
-    if (res.ok) {
-      alert("Изменения сохранены и отправлены в GitHub!");
-    } else {
-      alert("Ошибка при сохранении");
-    }
-  }
-
-  // Загрузка начального кода
-  fetch('/api/load')
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById('htmlEditor').value = data.html;
-      document.getElementById('cssEditor').value = data.css;
-    });
-</script>
     </header>
     
     <main>
@@ -247,10 +241,10 @@
         </div>
     </main>
     
-    <script src="script.js"></script>
+    <script src="navandheader.js"></script>
     <script src="three.min.js"></script>
     <script src="vanta.net.min.js"></script>
-    <script src="script2.js"></script>
+    <script src="navandparties.js"></script>
     <script src="app.js"></script>
     <script src="bg-40.js"></script>
     <script src="server.js"></script>
