@@ -1,0 +1,69 @@
+.developers{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем элементы по горизонтали */
+    justify-content: center; /* Центрируем элементы по вертикали */
+    margin-top: 75px;
+    width: 100%;
+    gap: 10px;
+    clip-path: polygon(50px 0, 100% 0, 100% calc(100% - 50px), calc(100% - 50px) 100%, 0 100%, 0 50px);
+}
+.developer {
+    display: flex;
+    flex-direction: row; /* Располагаем элементы в строку */
+    align-items: center; /* Выравниваем по вертикали */
+    width: 100%;
+    height: 100px;
+    background-color: rgb(18, 18, 18); 
+    position: relative;
+    transition: 0.5s;
+}
+.developer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%; /* Начинаем с правой стороны */
+    transform: translateX(-100%); /* Сдвигаем псевдоэлемент влево, чтобы он был скрыт */
+    width: 0; /* Начальная ширина 0 */
+    height: 100%; /* Высота 100% от родителя */
+    background-color: var(--pseudo-bg-color, rgba(119, 0, 0, 0.8));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 50px calc(100% - 120px));
+    transition: 0.6s ease; /* Плавное изменение ширины */
+    z-index: 2;
+    opacity: 0.5;
+}
+
+.developer:hover::after {
+    width: 300px;
+}
+.developer__flag {
+    height: 100%;
+    width: 60%;
+    background: linear-gradient(to left, rgba(18, 18, 18, 1) 20%, rgba(18, 18, 18, 0.8) 50%, rgba(18, 18, 18, 0.6) 80%, rgba(18, 18, 18, 0.6) 90%),
+    url('img/Neflag.png');
+    background-size: contain;
+    background-position: center; 
+    
+}
+
+.developer2__flag {
+    height: 100%;
+    width: 60%;
+    background: linear-gradient(to left, rgba(18, 18, 18, 1) 20%, rgba(18, 18, 18, 0.8) 50%, rgba(18, 18, 18, 0.6) 80%, rgba(18, 18, 18, 0.6) 90%),
+    url('img/LGflag.png');
+    background-size: contain;
+    background-position: center;
+}
+.developer__nick {
+    margin-left: auto;
+    margin-right: 30px;
+    font-size: 1.5rem;
+    text-align: left; 
+}
+.developer__do{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    font-size: 1.5rem;
+}
