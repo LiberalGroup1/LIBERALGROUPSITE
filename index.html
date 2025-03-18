@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBERAL GROUP</title>
+    <link rel="icon" href="styles/LG_ico.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/material.min.css">
+</head>
+<body>
+    <nav class="nav">
+        <ul class="nav__list">
+            <li><a href="#constitution" class="nav-link" data-color="0x0000ff" data-background="0x333333" data-pseudo-bg-color="0x0000ff" data-target="modal-constitution">Конституция</a></li>
+            <li><a href="#reputation" class="nav-link" data-color="0xffb1" data-background="0x1000" data-pseudo-bg-color="0xffb1" data-target="modal-reputation">Репутации</a></li>
+            <li><a href="#activity" class="nav-link" data-color="0x00ff00" data-background="0x222222" data-pseudo-bg-color="0x00ff00" data-target="modal-activity">Активность</a></li>
+            <li><a href="#home" class="nav-link" data-color="0xff0000" data-background="0xe0303" data-pseudo-bg-color="0xff0000">Главная</a></li>
+            <li><a href="#games" class="nav-link" data-color="0xffff00" data-background="0x444444" data-pseudo-bg-color="0xffff00" data-target="modal-games">Во что играем</a></li>
+            <li><a href="#parties" class="nav-link" data-color="0xff00ff" data-background="0x6040e" data-pseudo-bg-color="0xff00ff" data-target="modal-parties">Партии</a></li>
+            <li><a href="#developers" class="nav-link" data-color="0x3f8fff" data-background="0x41a1f" data-pseudo-bg-color="0x3f8fff" data-target="modal-developers">Разработчики</a></li>
+        </ul>
+    </nav>
+    <div class="modal" id="modal-constitution">
+        <div class="modal-content">
+            <h2 class="modal-content__title">Конституция</h2>
+            <p>Текст о конституции...</p>
+        </div>
+    </div>
+    
+    <div class="modal" id="modal-reputation">
+        <div class="modal-content">
+            <h2 class="modal-content__title">Репутации</h2>
+            <p>Текст о репутациях...</p>
+        </div>
+    </div>
+    
+    <div class="modal" id="modal-activity">
+        <div class="modal-content">
+            <h2 class="modal-content__title">Активность</h2>
+            <p>Текст об активности...</p>
+        </div>
+    </div>
+    
+    <div class="modal" id="modal-home">
+        <div class="modal-content">
+            <h2 class="modal-content__title">Главная</h2>
+            <p>Текст о главной...</p>
+        </div>
+    </div>
+    
+    <div class="modal" id="modal-games">
+        <div class="modal-content">
+            <h2 class="modal-content__title">Во что играем</h2>
+            <div class="games">
+              <div class="game">
+
+              </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="modal-parties"> 
+        <button id="back" class="hidden-back"><</button> 
+        <div class="modal-content" id="modal-content"> 
+          <h2 class="modal-content__title">Партии</h2> 
+          <div class="parties"> 
+            <div class="slider"> 
+              <div class="item" data-id="republicans"> 
+                <img src="img/R.symbol.png" alt="" class="item__logo"> 
+                <h1>Республиканцы</h1> 
+                <div class="item__players"> 
+                    <img src="img/icons8-пользователь-96.png" alt=""> 
+                  <p>1</p> 
+                </div> 
+              </div> 
+              <div class="item" data-id="lr"> 
+                <img src="img/LR.png" alt="" class="item__logo"> 
+                <h1>Либеральный Рассвет</h1> 
+                <div class="item__players"> 
+                  <img src="img/icons8-пользователь-96.png" alt=""> 
+                  <p>3</p> 
+                </div> 
+              </div> 
+              <div class="item" data-id="ne"> 
+                <img src="img/Ne.png" alt="" class="item__logo"> 
+                <h1>Новая Эра</h1> 
+                <div class="item__players"> 
+                  <img src="img/icons8-пользователь-96.png" alt=""> 
+                  <p>1</p> 
+                </div> 
+              </div> 
+              <button id="next">></button> 
+              <button id="prev"><</button> 
+            </div> 
+          </div> 
+        </div> 
+        <div class="item-details hidden-details" id="republicans-details"> 
+            <p><span class="italic__font">Дата регистрации: 11.09.2024 </span>
+                <br>
+                <span class="bold__font">Название партии</span>: Республиканцы
+                <br><br>
+                <span class="bold__font">Лидер партии</span>: @Excel 
+                <br><br>
+                <span class="bold__font">Идеология</span>: Либеральный консерватизм
+                <br><br>
+                <span class="bold__font">Позиция Политического Режима</span>: Парламентская демократия
+                <br>
+                <span class="bold__font">Политическая Сторона</span>: Правая
+                <br><br>
+                <span class="bold__font">Отношение к религии</span>: Нейтрально-Положительное отношения
+                <br><br>
+                <span class="bold__font">Цели партии</span>: Наша партия будет урегулировать свободу и поддерживать традиционные ценности (Пример Артём осуждаю) 
+                <br><br>
+                <span class="bold__font">Коалиция</span>: -
+                <br><br>
+                <span class="bold__font">Описание партии</span>: Наша партия представляет собой сочетание консервативных и либеральных ценностей. Мы выступаем за урегулирную свободу прав и стабильные правила внутри группы, поддерживая баланс между традициями и прогрессивными реформами. Наша партия против коммунистических и тоталитарных идеологий. Мы поддержуем свободу слова, свободную экономику и будем подстраиваться под игроков группы.
+                <br><br>
+                <span class="bold__font">Форма управления</span>: Полу-президентская
+                <br><br>            
+                <span class="bold__font">Девиз партии</span>:  Сделаем это в месте!</p> 
+              </p> 
+        </div> 
+        <div class="item-details hidden-details" id="ne-details"> 
+            <p><span class="italic__font">Дата регистрации: 08/11/2024 </span>
+            <br>
+            <span class="bold__font">Название партии</span>: Новая Эра (НЭ)
+            <br>
+            <span class="bold__font">Лидер партии</span>: Nikita Sushko (fazennukkk)
+            <br><br>
+            <span class="bold__font">Идеология</span>: Социал Либерализм
+            <br><br>
+            <span class="bold__font">Позиция Политического Режима</span>: Прямая демократия
+            <br>
+            <span class="bold__font">Политическая Сторона</span>: Право-центрийская
+            <br><br>
+            <span class="bold__font">Отношение к религии</span>: Нейтральное отношение
+            <br><br>
+            <span class="bold__font">Цели партии</span>: Поддержка свободы выражения мнений и защиты прав всех участников.
+            <br><br>
+            <span class="bold__font">Коалиция</span>: -
+            <br><br>
+            <span class="bold__font">Описание партии</span>: Мы - право-центрийская партия которая ставим в центр своего внимания свободу и прогресс для всех. Мы стремимся создать общество, где каждый человек сможет доступно говорить о своих интересах/религии/веры, и жить без ограничений. Мы поддерживаем демократические ценности и прогрессивные идеи, стремясь развивать и улучшать наш сервер, делая его местом, где каждый может быть собой. Мы против полного экономического равенства, но за свободу в выборе и справедливое распределение возможностей. Наша партия поддерживает равенство прав для всех, включая ЛГБТ-сообщество, и также выступает против давления на традиционые взгляды и религиозных убеждения.
+            <br><br>
+            <span class="bold__font">Форма управления</span>: Полу-президентская
+            <br><br>            
+            <span class="bold__font">Девиз партии</span>: Свобода для каждого, прогресс для всех!</p> 
+          </p> 
+        </div> 
+        <div class="item-details hidden-details" id="lr-details"> 
+          <p><span class="italic__font">Дата регистрации: 29/03/2024 </span>
+            <br>
+            <span class="bold__font">Название партии</span>: Либеральный Рассвет
+            <br>
+            <span class="bold__font">Лидер партии</span>: Тимофей Крымченко (@Timofey)
+            <br><br>
+            <span class="bold__font">Идеология</span>: Либертарианизм
+            <br><br>
+            <span class="bold__font">Позиция Политического Режима</span>:  Парламентская демократия
+            <br>
+            <span class="bold__font">Политическая Сторона</span>: Правая
+            <br><br>
+            <span class="bold__font">Отношение к религии</span>: ЛР не поддерживает и даже осуждает религию. Мы считаем что религия нарушает личные свободы, этику и нормы которые мы как либертарианцы уважаем. (Анти-теизм)
+            <br><br>
+            <span class="bold__font">Цели партии</span>: Развитие абсолютно свободной группы. Отказ от многих ограничений (но не всех). Устранение любой религии и традиций в ЛГ.
+            <br><br>
+            <span class="bold__font">Коалиция</span>: -
+            <br><br>
+            <span class="bold__font">Описание партии</span>:  Далеко не все понимают что такое либертарианизм, а кто-то и вовсе сравнивает его с либерализмом или анархизмом. Государство (лидер и парламент) должно существовать в минимальном виде, обеспечивая условия для децентрализации и самоуправления проектов и разных ветвей группы, а сама власть должна быть сильно ограничена в возможностях. Например разрешение на критику, осуждение, дискриминацию или вовсе право на отмену указа исполнительной власти ЛГ. Мы поддерживаем полу-парламентскую демократию (парламентская демократия с элементами прямой демократии). Это необходимо для обеспечения эффективности в политическом плане, так как политические партии лучше понимают политику.
+            Как либертарианцы мы поддерживаем абсолютную свободу слова. 
+            Мы категорически против пророссийских позиций, ЛР не поддерживает русский фашизм, нацизм и империализм. 
+            ЛР не поддерживает вступление девушек в группу, так как наше прошлое показывает что противоположный пол приносил слишком много вреда свободе и открытости группы. Для защиты дружелюбности и открытости всех участников ЛГ, их пускать сюда нельзя.
+            Так-же как правая партия мы выступаем за индивидуализм, технократический  прогрессивизм, анти-авторитаризм и анти-консерватизм. 
+            <br><br>
+            <span class="bold__font">Сайт партии</span>: <a href="https://liberaldawn.carrd.co/" target="_blank">https://liberaldawn.carrd.co/</a> (тут полное описание)
+            <br><br>
+            <span class="bold__font">Форма управления</span>: Полу-президентская
+            <br><br>            
+            <span class="bold__font">Девиз партии</span>: У свободы нет границ</p> 
+        </div> 
+      </div>
+
+    <div class="modal" id="modal-developers">
+        <div class="modal-content">
+            <h2 class="modal-content__title">Разработчики</h2>
+            <div class="developers">
+                <div class="developer">
+                    <div class="developer2__flag"></div>
+                    <p class="developer__do">Координатор, дизайн</p>
+                    <p class="developer__nick">timofey_pp | Тимофей</p>
+                </div>
+                <div class="developer">
+                    <div class="developer__flag"></div>
+                    <p class="developer__do">Код, дизайн</p>
+                    <p class="developer__nick">fazennukkk |  Никита</p>
+                </div>
+                <div class="editor-login" id="editor-login">
+                  <input type="password" id="editor-password" placeholder="Пароль для входа" />
+                  <button class="editor-button" id="editor-login-btn">Войти как разработчик</button>
+                </div>
+              
+                <div class="editor-container" id="editor-wrapper">
+                  <h3>Редактирование HTML-файла:</h3>
+                  <textarea id="editor-textarea"></textarea><br>
+                  <button class="editor-button" id="editor-save-btn">💾 Сохранить</button>
+                </div>
+              
+                <!-- CodeMirror -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/edit/closetag.min.js"></script>
+              
+                <!-- Скрипт редактора -->
+                <script>
+                  document.addEventListener("DOMContentLoaded", function () {
+                    class EditorManager {
+                      constructor({ password, repo, filePath }) {
+                        this.password = password;
+                        this.repo = repo;
+                        this.filePath = filePath;
+                        this.fileSHA = '';
+                        this.editor = null;
+                        this.loadedContent = '';
+                      }
+              
+                      async login() {
+                        const entered = document.getElementById('editor-password').value;
+                        if (entered !== this.password) {
+                          alert("Неверный пароль!");
+                          return;
+                        }
+              
+                        document.getElementById('editor-login').style.display = 'none';
+                        document.getElementById('editor-wrapper').style.display = 'block';
+              
+                        try {
+                          await this.loadFile();
+                          console.log("Загруженный код:", this.loadedContent); // Логирование кода
+                        } catch (err) {
+                          console.error("Ошибка загрузки файла:", err);
+                          alert("❌ Ошибка загрузки файла с GitHub.");
+                        }
+              
+                        // Ждём один кадр, чтобы DOM отрисовался
+                        requestAnimationFrame(() => {
+                          try {
+                            this.editor = CodeMirror.fromTextArea(document.getElementById('editor-textarea'), {
+                              mode: "htmlmixed",
+                              lineNumbers: true,
+                              autoCloseTags: true,
+                              theme: "material"
+                            });
+              
+                            this.editor.setValue(this.loadedContent); // Вставляем код
+                          } catch (err) {
+                            console.error("Ошибка инициализации редактора:", err);
+                          }
+                        });
+                      }
+              
+                      async loadFile() {
+                        const res = await fetch(`https://api.github.com/repos/${this.repo}/contents/${this.filePath}`);
+                        const data = await res.json();
+                        console.log("Ответ от GitHub:", data); // Логируем ответ от GitHub
+              
+                        if (data && data.content) {
+                          this.loadedContent = atob(data.content); // Декодируем содержимое
+                          this.fileSHA = data.sha;
+                        } else {
+                          throw new Error("Не удалось загрузить файл");
+                        }
+                      }
+              
+                      async save() {
+                        const token = prompt("Введите ваш GitHub Token:");
+                        if (!token) return;
+              
+                        const updatedContent = this.editor.getValue();
+                        const encodedContent = btoa(unescape(encodeURIComponent(updatedContent)));
+              
+                        try {
+                          const res = await fetch(`https://api.github.com/repos/${this.repo}/contents/${this.filePath}`, {
+                            method: 'PUT',
+                            headers: {
+                              'Authorization': `token ${token}`,
+                              'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                              message: "Изменения через редактор на сайте",
+                              content: encodedContent,
+                              sha: this.fileSHA
+                            })
+                          });
+              
+                          const result = await res.json();
+                          if (result.content) {
+                            alert("✅ Успешно сохранено на GitHub!");
+                            this.fileSHA = result.content.sha;
+                          } else {
+                            alert("❌ Ошибка при сохранении!");
+                            console.error(result);
+                          }
+                        } catch (err) {
+                          alert("❌ Ошибка соединения");
+                          console.error(err);
+                        }
+                      }
+                    }
+              
+                    const siteEditor = new EditorManager({
+                      password: "kotik123", // ← твой пароль
+                      repo: "liberalgroup1/LIBERALGROUPSITE", // ← твой репозиторий
+                      filePath: "index.html" // ← имя HTML-файла в репозитории
+                    });
+              
+                    document.getElementById('editor-login-btn').addEventListener('click', () => siteEditor.login());
+                    document.getElementById('editor-save-btn').addEventListener('click', () => siteEditor.save());
+                  });
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <header id="header" class="header">
+      <div class="header__content">
+        <h1 id="typewriter-text"></h1>
+      </div>
+    </header>
+    
+    <main>
+        <div class="text-container">
+            <h1>Advancing Freedom - Approaching the Future</h1>
+        </div>
+        
+        <div class="container">
+            <div style="display: flex; justify-content: center;">
+                <iframe src="https://discord.com/widget?id=1136636008474083328&theme=dark" 
+                        width="90%" height="500" allowtransparency="true" frameborder="0" 
+                        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+                </iframe>
+            </div>
+        </div>
+    </main>
+    
+    <script src="navandheader.js"></script>
+    <script src="three.min.js"></script>
+    <script src="vanta.net.min.js"></script>
+    <script src="navandparties.js"></script>
+    <script src="app.js"></script>
+    <script>
+const modalItems = document.querySelectorAll('.item');
+const modalContent = document.querySelector('#modal-content');
+const backButton = document.querySelector('#back');
+const itemDetails = document.querySelectorAll('.item-details');
+
+modalItems.forEach(modalItem => {
+  modalItem.addEventListener('click', () => {
+    modalContent.style.opacity = '0';
+    modalContent.style.visibility = 'hidden';
+    setTimeout(() => {
+      modalContent.style.display = 'none';
+    }, 500);
+
+    const detailsId = modalItem.dataset.id + '-details';
+    const details = document.querySelector(`#${detailsId}`);
+    if (details) {
+      details.style.display = 'block';
+      setTimeout(() => {
+        details.style.opacity = '1';
+      }, 500);
+    }
+
+    setTimeout(() => {
+      backButton.classList.remove('hidden-back');
+      backButton.classList.add('visible-back');
+    }, 500);
+  });
+});
+
+backButton.addEventListener('click', () => {
+  modalContent.style.display = 'block';
+  setTimeout(() => {
+    modalContent.style.opacity = '1';
+    modalContent.style.visibility = 'visible';
+  }, 100);
+
+  itemDetails.forEach(detail => {
+    detail.style.display = 'none';
+    setTimeout(() => {
+      detail.style.opacity = '0';
+    }, 100);
+  });
+
+  setTimeout(() => {
+    backButton.classList.remove('visible-back');
+    backButton.classList.add('hidden-back');
+  }, 500);
+});
+
+    </script>
+</body>
+</html>
